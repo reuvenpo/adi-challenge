@@ -1,12 +1,7 @@
 
-def main():
-    mul = 4
-    base = 4
-
+def solve(mul, base, max_len=100):
     solution = base  # starting position
     digit = len(str(base))
-
-    max_len = 100  # Set a cap for the solution length since
 
     while digit <= max_len and str(solution * mul) != (str(base) + str(solution // 10**(len(str(base))))):
         print('solution        =', solution)
@@ -17,9 +12,18 @@ def main():
         solution = int(multiplied[-digit:]+str(base))
         digit += 1
 
+    return solution
+
+
+def main():
+    mul = 4
+    base = 4
+
+    solution = solve(mul, base)
+
     print('\nAnswer:')
     print(solution)
-    print(solution*mul)
+    print(solution * mul)
 
 
 if __name__ == '__main__':
