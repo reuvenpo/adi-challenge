@@ -7,8 +7,6 @@ def solve(mul, base, max_len=100):
         print('solution        =', solution)
         multiplied = str(solution * mul)
         print('solution * base =', multiplied)
-        while multiplied[-digit] == '0':
-            digit += 1  # This can't happen more than once or twice
         solution = int(multiplied[-digit:]+str(base))
         digit += 1
 
@@ -17,7 +15,7 @@ def solve(mul, base, max_len=100):
 
 def main():
     mul = 4
-    base = 4
+    base = 5
 
     solution = solve(mul, base)
 
